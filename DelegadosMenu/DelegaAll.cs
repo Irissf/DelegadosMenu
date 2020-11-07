@@ -36,8 +36,9 @@ namespace DelegadosMenu
                         Console.WriteLine("Must be a number!");
                     }
 
-                    try
+                    if (option > 0 && option <= final)
                     {
+
                         if (option != final)
                         {
                             menuFunctions[option - 1].Invoke();
@@ -47,11 +48,10 @@ namespace DelegadosMenu
                             Console.WriteLine("Goodbye!");
                         }
                     }
-                    catch (IndexOutOfRangeException)
+                    else
                     {
-                        Console.WriteLine("Invalid option");
+                        Console.WriteLine("Ese opción no existe");
                     }
-                    
 
                 } while (option != final);
             }
